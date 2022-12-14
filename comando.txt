@@ -1,0 +1,12 @@
+DEPLOYMENTS: Camada acima de um replica set, adicionando controle   
+de versão em cima deles. Um replica set permite que um número definido
+de pods sempre esteja em pé
+
+kubectl apply -f nginx-deployment.yaml --record
+    cria o deployment e atribui a versão ao controle 
+    de versionamento
+kubectl rollout history deployment nginx-deployment
+    histório de versões do deployemnet
+
+kubectl rollout undo deployment nginx-deployment --to-revision='NUMERO_VERSÃO'
+    volta para um versão especifica 
