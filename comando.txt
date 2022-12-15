@@ -10,3 +10,7 @@ kubectl rollout history deployment nginx-deployment
 
 kubectl rollout undo deployment nginx-deployment --to-revision='NUMERO_VERSÃO'
     volta para um versão especifica 
+
+ubectl annotate deployment portal-noticias-deployment kubernetes.io/change-cause="Texto para descrver deploument version"
+    Comando para descrever o que ocorreu na versão do deployment. Parecido com git commit
+    
