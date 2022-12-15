@@ -1,3 +1,17 @@
+COMANDOS GERAIS:
+kubectl get pods || svc || deployments || replicasets 
+    Lista os pods, services, deploys ou replicasets criados
+
+minikube start --vm-driver=virtualbox
+    Inicia o servidor do minikube
+
+kubectl get node -o wide 
+    comando especifico para o linux, lista a porta do servidor virtual 
+    criada pelo minikube para expor os serviços
+
+
+
+
 DEPLOYMENTS: Camada acima de um replica set, adicionando controle   
 de versão em cima deles. Um replica set permite que um número definido
 de pods sempre esteja em pé
