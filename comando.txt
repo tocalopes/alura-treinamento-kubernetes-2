@@ -1,7 +1,12 @@
 COMANDOS GERAIS:
-kubectl get pods || svc || deployments || replicasets 
+kubectl get pods || svc || deployments || replicasets || pvc
+    pv || sc
+    flag: --watch: para ver as criações em andamento
     Lista os pods, services, deploys ou replicasets criados
-
+    pv: persisten volume
+    pvc: persistent volume claim
+    sc: storageclass
+    
 minikube start --vm-driver=virtualbox
     Inicia o servidor do minikube
 
@@ -9,7 +14,24 @@ kubectl get node -o wide
     comando especifico para o linux, lista a porta do servidor virtual 
     criada pelo minikube para expor os serviços
 
+kubectl apply -f 'nome do arquivo.yaml'
+    comando para criação de pods,svc,etc através de um arquivo de configuração
+    .yaml
 
+kubectl exec -it 'nome do pod' --container 'nome do container' -- 'comando'
+    Comando para executar um container de um pod especifico, com um comando a ser executado no terminal
+    Ex:kubectl exec -it pod-volume --container nginx-container -- bash
+
+kubectl delete pods --all
+kubectl delete pod "podname"
+    Comando para deletar todos os pods / pods especifico
+
+
+MINIKUBE:
+    
+minikube ssh
+    comando para entrar dentro da máquina virtual
+    PS: para sair da máquina é necessário o comando "logout"
 
 
 DEPLOYMENTS: Camada acima de um replica set, adicionando controle   
