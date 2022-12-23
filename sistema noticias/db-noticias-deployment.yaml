@@ -3,10 +3,6 @@ kind: Deployment
 metadata:
   name: db-noticias-deployment
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: db-noticias
   template:
     metadata:
       name: db-noticias
@@ -21,3 +17,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: db-configmap
+  selector:
+    matchLabels:
+      app: db-noticias
