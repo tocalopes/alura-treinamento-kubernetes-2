@@ -1,0 +1,22 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: portal-noticias-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: portal-noticias-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  #A parte abaixo está indicando qual a quantidade de utilização
+  #em porcentagem do pod, definido no seu arquivo de deploymente
+  #como métrica para criação de um novo
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 50
+  

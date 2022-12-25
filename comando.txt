@@ -33,6 +33,12 @@ minikube ssh
     comando para entrar dentro da máquina virtual
     PS: para sair da máquina é necessário o comando "logout"
 
+minikube addons list
+    lista as extensões para o monikube
+
+minikube addons enable 'nome do addon' 
+    habilita uma das extensões do minikube
+    EX: minikube addons enable metrics-server 
 
 DEPLOYMENTS: Camada acima de um replica set, adicionando controle   
 de versão em cima deles. Um replica set permite que um número definido

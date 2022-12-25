@@ -33,7 +33,7 @@ spec:
             initialDelaySeconds: 20 
           readinessProbe:
             httpGet:
-              path: /
+              path: /inserir_noticias.php
               port: 80
             failureThreshold: 5
             #Quantidade de tentativas até ignorar o readinessProve

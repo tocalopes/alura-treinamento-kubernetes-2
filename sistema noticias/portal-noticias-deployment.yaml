@@ -17,6 +17,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: portal-configmap
+          resources:
+            requests:
+              cpu: 10m
           #Prova que a aplicação está saudável
           livenessProbe:
             httpGet:
